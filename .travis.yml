@@ -1,0 +1,22 @@
+language: java
+jdk:
+  - openjdk17
+
+branches:
+  only:
+    - master  # Build only on the 'main' branch
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/    # Cache Gradle dependencies
+    - $HOME/.gradle/wrapper/   # Cache Gradle wrapper
+
+script:
+  - ./gradlew clean build  # Replace with your Gradle build command
+
+notifications:
+  email:
+    recipients:
+      - ahmed.fathy1445@example.com  # Add your email address here
+    on_success: always  # Email notifications on build success
+    on_failure: always  # Email notifications on build failure
